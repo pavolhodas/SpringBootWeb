@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CompanyController {
 
-    @Autowired
-    private CompanyService companyService;
-
-    @GetMapping("/company")
-    public String writeSavedCompany(){
-        Company company = new Company();
-        company.setName("majo");
-
-        companyService.saveCompany(company);
-        return company.getName();
-    }
+//    @Autowired
+//    private CompanyService companyService;
+//
+//    @GetMapping("/company")
+//    public String writeSavedCompany(){
+//        Company company = new Company();
+//        company.setName("majo");
+//
+//        companyService.saveCompany(company);
+//        return company.getName();
+//    }
 }

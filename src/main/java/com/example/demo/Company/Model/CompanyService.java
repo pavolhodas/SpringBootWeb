@@ -4,5 +4,5 @@ import com.example.demo.Company.Company;
 
 public interface CompanyService{
 
-    public void saveCompany(Company company);
+    void saveCompany(Company company);
 }
