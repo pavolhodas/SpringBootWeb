@@ -1,10 +1,9 @@
-package com.example.demo;
+package com.example.demo.Company;
 
+import com.example.demo.Company.Model.CompanyRepository;
+import com.example.demo.Company.Model.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class CompanyServiceImpl implements CompanyService {

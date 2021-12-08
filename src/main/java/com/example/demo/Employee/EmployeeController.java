@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.demo.Employee;
 
-import org.springframework.boot.SpringApplication;
+import com.example.demo.Employee.Model.EmployeeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

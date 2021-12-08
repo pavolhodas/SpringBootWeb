@@ -1,4 +1,4 @@
-package com.example.demo.Model;
+package com.example.demo.Employee.Model;
 
 public class Programmer extends Employee{
 

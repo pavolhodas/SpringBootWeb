@@ -1,17 +1,15 @@
-package com.example.demo;
+package com.example.demo.Employee;
 
 
-import com.example.demo.Model.Employee;
-import com.example.demo.Model.Programmer;
-import com.example.demo.Model.Teacher;
+import com.example.demo.Employee.Model.Employee;
+import com.example.demo.Employee.Model.EmployeeService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService {
 
     private int number = num;
 

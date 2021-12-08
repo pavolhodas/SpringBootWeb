@@ -1,6 +1,4 @@
-package com.example.demo;
-
-import com.example.demo.Model.Employee;
+package com.example.demo.Employee.Model;
 
 import java.util.ArrayList;
 import java.util.List;

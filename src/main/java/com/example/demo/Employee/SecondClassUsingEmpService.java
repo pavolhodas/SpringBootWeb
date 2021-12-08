@@ -1,4 +1,5 @@
-package com.example.demo;
+package com.example.demo.Employee;
+import com.example.demo.Employee.Model.EmployeeService;
 import org.springframework.stereotype.Component;
 
 @Component
