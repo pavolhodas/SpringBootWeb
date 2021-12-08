@@ -9,10 +9,11 @@ public class CompanyController {
 
     @Autowired
     private CompanyService companyService;
-    Company company = new Company(1, "Palo");
 
     @GetMapping("/company")
     public String writeSavedCompany(){
+        Company company = new Company();
+        company.setName("majo");
 
         companyService.saveCompany(company);
         return company.getName();
