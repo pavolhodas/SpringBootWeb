@@ -7,15 +7,24 @@ import javax.persistence.Id;
 public class Company {
 
     @Id
-    private String id;
-
+    private Integer id;
     private String name;
 
-    public String getId() {
+    public Company(){
+
+    }
+
+    public Company(Integer id, String name){
+        super();
+        this.id = id;
+        this.name = name;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
