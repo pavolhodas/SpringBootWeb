@@ -18,6 +18,18 @@ public class Address {
     private String city;
     private String state;
 
+    Address(){
+
+    }
+
+    Address(Integer id, String street, String zipCode, String city,  String state){
+        super();
+        this.id = id;
+        this.street = street;
+        this.zipCode = zipCode;
+        this.city = city;
+        this.state = state;
+    }
 
     public int getId() {
         return id;

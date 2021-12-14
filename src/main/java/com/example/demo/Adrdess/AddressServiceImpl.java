@@ -26,4 +26,15 @@ public class AddressServiceImpl implements AddressService, CompanyService {
     public void saveCompany(Company company) {
         companyRepository.save(company);
     }
+
+    @Override
+    public void addAddress(Address address) {
+        addressRepository.save(address);
+    }
+
+    @Override
+    public void addCompany(Company company) {
+        companyRepository.save(company);
+    }
+
 }
