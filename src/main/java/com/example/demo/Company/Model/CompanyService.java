@@ -6,5 +6,5 @@ public interface CompanyService{
 
     void saveCompany(Company company);
 
-    void addCompany(Company company);
+    Company addCompany(Company company);
 }

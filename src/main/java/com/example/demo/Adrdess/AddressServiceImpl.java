@@ -28,13 +28,15 @@ public class AddressServiceImpl implements AddressService, CompanyService {
     }
 
     @Override
-    public void addAddress(Address address) {
+    public Address addAddress(Address address) {
         addressRepository.save(address);
+        return address;
     }
 
     @Override
-    public void addCompany(Company company) {
+    public Company addCompany(Company company) {
         companyRepository.save(company);
+        return company;
     }
 
 }

@@ -10,24 +10,25 @@ public class Company {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
+    private int id;
+
     private String name;
 
     public Company(){
 
     }
 
-    public Company(Integer id, String name){
+    public Company(int id, String name){
         super();
         this.id = id;
         this.name = name;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

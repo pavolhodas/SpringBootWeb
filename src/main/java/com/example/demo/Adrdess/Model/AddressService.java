@@ -6,5 +6,6 @@ public interface AddressService {
 
     void saveAddress(Address address);
 
-    void addAddress(Address address);
+    Address addAddress(Address address);
+
 }

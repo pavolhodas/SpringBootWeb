@@ -1,19 +1,13 @@
 package com.example.demo.Adrdess;
 
-import com.example.demo.Adrdess.Address;
 import com.example.demo.Adrdess.Model.AddressService;
 import com.example.demo.Company.Company;
 import com.example.demo.Company.Model.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping
 public class AddressController {
 
     @Autowired
@@ -40,13 +34,20 @@ public class AddressController {
 //    }
 
 
-    @PostMapping("/addressCompany")
-    public String addCompanyWithAddress(){
-
-        Address address = new Address();
-        addressService.addAddress(address);
-
-
-        return address.getCity();
+    @PostMapping("/addAddressCompany")
+    public Address addCompany(@RequestBody Address newCompanyWithAddress) {
+        companyService.addCompany(newCompanyWithAddress);
+        return newCompanyWithAddress;
     }
+
+    @PostMapping("/addAddress")
+    public Address addAddress(@RequestBody Address newAddress){
+        return  addressService.addAddress(newAddress);
+    }
+
+    @PostMapping("/addCompany")
+    public Company addCompany(@RequestBody Company newCompany){
+        return  companyService.addCompany(newCompany);
+    }
+
 }
