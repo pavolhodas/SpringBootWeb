@@ -16,6 +16,7 @@ public class AddressController {
     @Autowired
     CompanyService companyService;
 
+    //5. fifth exercise
     @GetMapping("/address")
     public String writeSavedController(){
 
@@ -33,7 +34,7 @@ public class AddressController {
         return address.getCity();
     }
 
-
+    //6. sixth exercise
     @PostMapping("/addAddressCompany")
     public Address addCompany(@RequestBody Address newCompanyWithAddress) {
         companyService.addCompany(newCompanyWithAddress);
