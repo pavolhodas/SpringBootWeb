@@ -20,7 +20,7 @@ public class AddressController {
     public String writeSavedController(){
 
         Address address = new Address();
-
+        address.setZipCode("234");
 
         Company company = new Company();
         company.setName("Lucia");
