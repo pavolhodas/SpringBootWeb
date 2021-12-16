@@ -16,22 +16,22 @@ public class AddressController {
     @Autowired
     CompanyService companyService;
 
-//    @GetMapping("/address")
-//    public String writeSavedController(){
-//
-//        Address address = new Address();
-//
-//
-//        Company company = new Company();
-//        company.setName("Lucia");
-//        if(company.getName() != null) {
-//            addressService.saveAddress(address);
-//        }
-//        if(address.getCity() != null) {
-//            companyService.saveCompany(company);
-//        }
-//        return address.getCity();
-//    }
+    @GetMapping("/address")
+    public String writeSavedController(){
+
+        Address address = new Address();
+
+
+        Company company = new Company();
+        company.setName("Lucia");
+        if(company.getName() != null) {
+            addressService.saveAddress(address);
+        }
+        if(address.getCity() != null) {
+            companyService.saveCompany(company);
+        }
+        return address.getCity();
+    }
 
 
     @PostMapping("/addAddressCompany")
