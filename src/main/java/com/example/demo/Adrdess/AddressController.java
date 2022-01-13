@@ -22,33 +22,29 @@ public class AddressController {
 
         Address address = new Address();
         address.setZipCode("234");
+        address.setCity("zilina");
+        address.setState("Slovensko");
+        address.setStreet("poluvsie 190");
 
-        Company company = new Company();
-        company.setName("Lucia");
-        if(company.getName() != null) {
-            addressService.saveAddress(address);
-        }
-        if(address.getCity() != null) {
-            companyService.saveCompany(company);
-        }
+        addressService.saveAddress(address);
         return address.getCity();
     }
 
     //6. sixth exercise
-    @PostMapping("/addAddressCompany")
-    public Address addCompany(@RequestBody Address newCompanyWithAddress) {
-        companyService.addCompany(newCompanyWithAddress);
-        return newCompanyWithAddress;
-    }
+//    @PostMapping("/addAddressCompany")
+//    public Address addCompany(@RequestBody Address newCompanyWithAddress) {
+//        //companyService.addCompany(newCompanyWithAddress);
+//        return newCompanyWithAddress;
+//    }
 
-    @PostMapping("/addAddress")
-    public Address addAddress(@RequestBody Address newAddress){
-        return  addressService.addAddress(newAddress);
-    }
-
-    @PostMapping("/addCompany")
-    public Company addCompany(@RequestBody Company newCompany){
-        return  companyService.addCompany(newCompany);
-    }
+//    @PostMapping("/addAddress")
+//    public Address addAddress(@RequestBody Address newAddress){
+//        return  addressService.addAddress(newAddress);
+//    }
+//
+//    @PostMapping("/addCompany")
+//    public Company addCompany(@RequestBody Company newCompany){
+//        return  companyService.addCompany(newCompany);
+//    }
 
 }

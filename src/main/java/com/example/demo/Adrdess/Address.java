@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Address extends Company{
+public class Address{
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -18,11 +18,11 @@ public class Address extends Company{
     private String city;
     private String state;
 
-    Address(){
+    public Address(){
 
     }
 
-    Address(Integer id, String street, String zipCode, String city,  String state){
+    public Address(Integer id, String street, String zipCode, String city,  String state){
         super();
         this.id = id;
         this.street = street;
@@ -30,6 +30,8 @@ public class Address extends Company{
         this.city = city;
         this.state = state;
     }
+
+
 
     public int getId() {
         return id;

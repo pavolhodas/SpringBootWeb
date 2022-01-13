@@ -8,5 +8,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping
 public class CompanyController {
 
+    @Autowired
+    CompanyService companyService;
 
+    Company company = new Company( "Palo");
+
+    @GetMapping("/company")
+    public String saveCompany(){
+        companyService.saveCompany(company);
+
+        return company.getName();
+    }
 }
