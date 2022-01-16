@@ -1,11 +1,9 @@
 package com.example.demo.Adrdess;
 
 import com.example.demo.Company.Company;
+import com.example.demo.Employee.Model.Employee;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Address{
@@ -18,11 +16,13 @@ public class Address{
     private String city;
     private String state;
 
+    @OneToOne
+    private Company company;
     public Address(){
 
     }
 
-    public Address(Integer id, String street, String zipCode, String city,  String state){
+    public Address(String street, String zipCode, String city,  String state){
         super();
         this.id = id;
         this.street = street;

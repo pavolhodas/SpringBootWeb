@@ -1,9 +1,8 @@
 package com.example.demo.Company;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.example.demo.Adrdess.Address;
+
+import javax.persistence.*;
 
 @Entity
 public class Company {
@@ -14,14 +13,17 @@ public class Company {
 
     private String name;
 
+    @OneToOne
+    private Address address;
+
+
     public Company(){
 
     }
 
-    public Company( String name){
-        super();
-        //this.id = id;
+    public Company(String name, Address address){
         this.name = name;
+        this.address = address;
     }
 
     public int getId() {
@@ -39,4 +41,13 @@ public class Company {
     public void setName(String name){
         this.name = name;
     }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
 }

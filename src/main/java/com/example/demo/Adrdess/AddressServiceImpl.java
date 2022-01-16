@@ -19,14 +19,10 @@ public class AddressServiceImpl implements AddressService {
         addressRepository.save(address);
     }
 
-
-
     @Override
     public Address addAddress(Address address) {
         addressRepository.save(address);
         return address;
     }
-
-
 
 }
