@@ -1,12 +1,21 @@
 package com.example.demo.Employee;
 
+import com.example.demo.Employee.Model.Employee;
 import com.example.demo.Employee.Model.EmployeeService;
+import com.example.demo.Employee.Model.EmployeeType;
+import com.example.demo.Employee.Model.Teacher;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class EmployeeController {
+
+    @Autowired
     EmployeeService employeeService;
+
     DependencyInjectionDemo demo = new DependencyInjectionDemo(new EmployeeServiceImpl());
 
     public EmployeeController(EmployeeService employeeService) {
@@ -27,5 +36,16 @@ public class EmployeeController {
     @GetMapping("/num")
     public int writeNum(){
         return demo.employeeService.writeNumber();
+    }
+
+    @GetMapping("/saveEmp")
+    public void saveEmp(){
+        Employee employee = new Employee(EmployeeType.DRIVER, 2000, 50);
+        employeeService.saveEmployee(employee);
+    }
+
+    @PostMapping("/addEmp")
+    public void addEmp(@RequestBody Employee employee){
+        employeeService.saveEmployee(employee);
     }
 }

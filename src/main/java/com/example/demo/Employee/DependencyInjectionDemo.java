@@ -3,6 +3,7 @@ import com.example.demo.Employee.Model.Employee;
 import com.example.demo.Employee.Model.EmployeeService;
 import com.example.demo.Employee.Model.Programmer;
 import com.example.demo.Employee.Model.Teacher;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

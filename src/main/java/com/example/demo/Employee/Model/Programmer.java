@@ -1,5 +1,10 @@
 package com.example.demo.Employee.Model;
 
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+@NoArgsConstructor
+@Entity
 public class Programmer extends Employee{
 
     private final float programmerSalary = salary + bonus;

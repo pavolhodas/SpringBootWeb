@@ -1,8 +1,8 @@
 package com.example.demo.Employee;
 
 
-import com.example.demo.Employee.Model.Employee;
-import com.example.demo.Employee.Model.EmployeeService;
+import com.example.demo.Employee.Model.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,6 +10,9 @@ import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
+
+    @Autowired
+    EmployeeRepository employeeRepository;
 
     private int number = num;
 
@@ -34,5 +37,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     public double getSum(ArrayList<Employee> employees){
         System.out.println(totalBonus(employees) + totalSalary(employees));
         return totalBonus(employees) + totalSalary(employees);
+    }
+
+    @Override
+    public Employee saveEmployee(Employee employee) {
+        employeeRepository.save(employee);
+        return employee;
     }
 }

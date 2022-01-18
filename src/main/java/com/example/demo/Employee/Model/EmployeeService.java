@@ -6,13 +6,15 @@ import java.util.List;
 
 public interface EmployeeService {
 
-    public int num = 0;
+    int num = 0;
 
-    public int writeNumber();
+    int writeNumber();
 
-    public double getSum(ArrayList<Employee> employees);
+    double getSum(ArrayList<Employee> employees);
 
-    public double totalSalary(List<Employee> employeesSalary);
+    double totalSalary(List<Employee> employeesSalary);
 
-    public double totalBonus(List<Employee> employeesBonus);
+    double totalBonus(List<Employee> employeesBonus);
+
+    Employee saveEmployee(Employee employee);
 }
