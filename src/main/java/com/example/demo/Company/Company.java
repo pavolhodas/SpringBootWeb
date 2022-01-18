@@ -1,10 +1,15 @@
 package com.example.demo.Company;
 
 import com.example.demo.Adrdess.Address;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
-
+@Getter
+@Setter
 @Entity
+@NoArgsConstructor
 public class Company {
 
     @Id
@@ -13,41 +18,11 @@ public class Company {
 
     private String name;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     private Address address;
-
-
-    public Company(){
-
-    }
 
     public Company(String name, Address address){
         this.name = name;
         this.address = address;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
 }
