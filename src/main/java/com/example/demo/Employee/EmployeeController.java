@@ -1,9 +1,6 @@
 package com.example.demo.Employee;
 
-import com.example.demo.Employee.Model.Employee;
-import com.example.demo.Employee.Model.EmployeeService;
-import com.example.demo.Employee.Model.EmployeeType;
-import com.example.demo.Employee.Model.Teacher;
+import com.example.demo.Employee.Model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,12 +37,34 @@ public class EmployeeController {
 
     @GetMapping("/saveEmp")
     public void saveEmp(){
-        Employee employee = new Employee(EmployeeType.DRIVER, 2000, 50);
+        Employee employee = new Programmer( 2000, 50);
         employeeService.saveEmployee(employee);
     }
 
     @PostMapping("/addEmp")
     public void addEmp(@RequestBody Employee employee){
-        employeeService.saveEmployee(employee);
+
+        if(employee.getEmployeeType() == EmployeeType.DRIVER){
+            Employee driver = new Driver();
+            driver.setEmployeeType(employee.getEmployeeType());
+            driver.setBonus(employee.getBonus());
+            driver.setSalary(employee.getSalary());
+
+            employeeService.saveEmployee(driver);
+        }else if(employee.getEmployeeType() == EmployeeType.PROGRAMMER) {
+            Employee programmer = new Programmer();
+            programmer.setEmployeeType(employee.getEmployeeType());
+            programmer.setBonus(employee.getBonus());
+            programmer.setSalary(employee.getSalary());
+
+            employeeService.saveEmployee(programmer);
+        }else if(employee.getEmployeeType() == EmployeeType.TEACHER){
+            Employee teacher = new Teacher();
+            teacher.setEmployeeType(employee.getEmployeeType());
+            teacher.setBonus(employee.getBonus());
+            teacher.setSalary(employee.getSalary());
+
+            employeeService.saveEmployee(employee);
+        }
     }
 }
