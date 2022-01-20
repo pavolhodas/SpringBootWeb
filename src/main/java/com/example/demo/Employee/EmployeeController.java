@@ -42,29 +42,30 @@ public class EmployeeController {
     }
 
     @PostMapping("/addEmp")
-    public void addEmp(@RequestBody Employee employee){
+    public void addEmp( @RequestBody Employee employee){
+        employeeService.saveEmployee(employee);
 
-        if(employee.getEmployeeType() == EmployeeType.DRIVER){
-            Employee driver = new Driver();
-            driver.setEmployeeType(employee.getEmployeeType());
-            driver.setBonus(employee.getBonus());
-            driver.setSalary(employee.getSalary());
-
-            employeeService.saveEmployee(driver);
-        }else if(employee.getEmployeeType() == EmployeeType.PROGRAMMER) {
-            Employee programmer = new Programmer();
-            programmer.setEmployeeType(employee.getEmployeeType());
-            programmer.setBonus(employee.getBonus());
-            programmer.setSalary(employee.getSalary());
-
-            employeeService.saveEmployee(programmer);
-        }else if(employee.getEmployeeType() == EmployeeType.TEACHER){
-            Employee teacher = new Teacher();
-            teacher.setEmployeeType(employee.getEmployeeType());
-            teacher.setBonus(employee.getBonus());
-            teacher.setSalary(employee.getSalary());
-
-            employeeService.saveEmployee(employee);
-        }
+//        if(employee.getEmployeeType() == EmployeeType.DRIVER){
+//            Employee driver = new Driver();
+//            driver.setEmployeeType(employee.getEmployeeType());
+//            driver.setBonus(employee.getBonus());
+//            driver.setSalary(employee.getSalary());
+//
+//            employeeService.saveEmployee(driver);
+//        }else if(employee.getEmployeeType() == EmployeeType.PROGRAMMER) {
+//            Employee programmer = new Programmer();
+//            programmer.setEmployeeType(employee.getEmployeeType());
+//            programmer.setBonus(employee.getBonus());
+//            programmer.setSalary(employee.getSalary());
+//
+//            employeeService.saveEmployee(programmer);
+//        }else if(employee.getEmployeeType() == EmployeeType.TEACHER){
+//            Employee teacher = new Teacher();
+//            teacher.setEmployeeType(employee.getEmployeeType());
+//            teacher.setBonus(employee.getBonus());
+//            teacher.setSalary(employee.getSalary());
+//
+//            employeeService.saveEmployee(employee);
+//        }
     }
 }

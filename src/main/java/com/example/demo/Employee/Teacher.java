@@ -1,5 +1,7 @@
-package com.example.demo.Employee.Model;
+package com.example.demo.Employee;
 
+import com.example.demo.Employee.Employee;
+import com.example.demo.Employee.Model.EmployeeType;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.DiscriminatorValue;

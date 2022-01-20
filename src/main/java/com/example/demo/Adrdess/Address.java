@@ -1,7 +1,6 @@
 package com.example.demo.Adrdess;
 
 import com.example.demo.Company.Company;
-import com.example.demo.Employee.Model.Employee;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
