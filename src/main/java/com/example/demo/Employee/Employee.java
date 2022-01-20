@@ -28,7 +28,7 @@ import javax.persistence.*;
         @JsonSubTypes.Type(value = Programmer.class, name = "Programmer"),
         @JsonSubTypes.Type(value = Teacher.class, name = "Teacher")
 })
-public class Employee {
+public abstract class Employee {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     int id;
