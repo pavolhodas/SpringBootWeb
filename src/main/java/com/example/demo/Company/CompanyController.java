@@ -3,6 +3,7 @@ package com.example.demo.Company;
 import com.example.demo.Adrdess.Address;
 import com.example.demo.Adrdess.Model.AddressService;
 import com.example.demo.Company.Model.CompanyService;
+import com.example.demo.Course.Model.CourseService;
 import com.example.demo.Employee.Employee;
 import com.example.demo.Employee.Model.EmployeeService;
 import com.example.demo.Employee.Programmer;
@@ -25,6 +26,9 @@ public class CompanyController {
 
     @Autowired
     EmployeeService employeeService;
+
+    @Autowired
+    CourseService courseService;
 
     //6. exercise, one to one
     @GetMapping("/address")

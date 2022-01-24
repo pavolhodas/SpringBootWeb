@@ -1,6 +1,7 @@
 package com.example.demo.Employee;
 
 import com.example.demo.Company.Company;
+import com.example.demo.Course.Course;
 import com.example.demo.Employee.Model.EmployeeType;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -11,6 +12,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -48,6 +50,14 @@ public abstract class Employee {
 
     @Enumerated(value = EnumType.STRING)
     private EmployeeType typeOfEmployee;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "courses",
+            joinColumns = @JoinColumn(name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
+    List<Course> courses;
 
     public Employee(EmployeeType employeeType, float salary, int bonus) {
         this.employeeType = employeeType;
