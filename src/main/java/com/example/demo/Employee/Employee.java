@@ -1,5 +1,6 @@
 package com.example.demo.Employee;
 
+import com.example.demo.Company.Company;
 import com.example.demo.Employee.Model.EmployeeType;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -8,6 +9,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -35,6 +38,13 @@ public abstract class Employee {
     EmployeeType employeeType;
     float salary;
     int bonus;
+
+    @ManyToOne(fetch=FetchType.EAGER, targetEntity = Company.class)
+    @JoinColumn(name = "companyy_id")
+    private Company company;
+
+    @Column(name = "company_id")
+    private Long companyId;
 
     @Enumerated(value = EnumType.STRING)
     private EmployeeType typeOfEmployee;
